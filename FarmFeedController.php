@@ -62,7 +62,7 @@ class FarmFeedController extends Controller
           return [ 'status' => false, 'message' => 'Game Over.' ];
           exit;
         }
-        // logic to feed and animals
+        // logic to feed an animals
         foreach( $arrobjAnimals as $strKey => $objAnimal )
         {
           $objAnimal->setCurrentMammalFeedCount( $objAnimal->getCurrentMammalFeedCount() - 1 );
@@ -76,7 +76,7 @@ class FarmFeedController extends Controller
           if( true == $objAnimal->isMammalDead() )
           {
             $strDeadAnimal = $strKey;
-            // check if farmer dead the Game is Over
+            // check if farmer dead then Game is Over
             if( $objAnimal instanceof Farmer )
             {
               return [ 'status' => false, 'message' => 'Game Over. Farmer Dead.' ];
@@ -90,7 +90,7 @@ class FarmFeedController extends Controller
     }
 
     /**
-    * This function is user to create animal and store in session
+    * This function is used to create animal and store in session
     *
     * @return array
     */
@@ -103,7 +103,7 @@ class FarmFeedController extends Controller
     }
 
     /**
-    * This function is user create animals on the basis of required animla count
+    * This function is used create animals on the basis of required animal count
     *
     * @return array
     */
@@ -124,7 +124,7 @@ class FarmFeedController extends Controller
     }
 
     /**
-    * This function is user to return random array with preserved key
+    * This function is used to return random array with preserved key
     * @param $arrmixData array of animal obejcts to shuffle
     * @return array
     */
